@@ -4,18 +4,27 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state: {
-        storeVar: 1
-    },
-    mutations: {
-        increaseStoreVar(state) {
-            state.storeVar += 1;
+    modules: {
+        messageBox: {
+            namespaced: true,
+            state: {
+                storeVar: 4
+            },
+            mutations: {
+                increaseStoreVar(state) {
+                    state.storeVar += 1;
+                }
+            },
+            actions: {
+                increase({ commit }) {
+                    commit('increaseStoreVar');
+                }
+            },
+            getters: {
+                isBig: store => item => {
+                    return store.storeVar > item;
+                }
+            }
         }
-    },
-    actions: {
-        increase({ commit }) {
-            commit('increaseStoreVar');
-        }
-    },
-    modules: {}
+    }
 });

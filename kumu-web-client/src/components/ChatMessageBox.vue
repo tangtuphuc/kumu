@@ -3,17 +3,21 @@
         <div v-for="message in listMessage" :key="message.id">{{ message.text }}</div>
         <div>{{ dummyVar }}</div>
         <div>{{ storeVar }}</div>
+        <div>{{ isBig(5) }}</div>
         <button @click="testFunc">Increase DummyVar!!</button>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 @Component({
     computed: {
-        ...mapState('title', ['storeVar'])
+        ...mapState('messageBox', {
+            storeVar: (state: { storeVar: string }) => state.storeVar
+        }),
+        ...mapGetters('messageBox', ['isBig'])
     }
 })
 export default class ChatMessageBox extends Vue {
@@ -23,6 +27,7 @@ export default class ChatMessageBox extends Vue {
 
     testFunc() {
         this.dummyVar = this.dummyVar + 1;
+        this.$store.dispatch('messageBox/increase');
     }
 }
 </script>
