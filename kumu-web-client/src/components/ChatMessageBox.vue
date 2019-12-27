@@ -14,14 +14,15 @@ import { mapState, mapGetters } from 'vuex';
 
 @Component({
     computed: {
-        ...mapState('messageBox', {
+        ...mapState<{ storeVar: string }>('messageBox', {
             storeVar: (state: { storeVar: string }) => state.storeVar
         }),
         ...mapGetters('messageBox', ['isBig'])
     }
 })
 export default class ChatMessageBox extends Vue {
-    @Prop() listMessage: Array<{}>;
+    @Prop()
+    listMessage: Array<{}> = [];
 
     dummyVar: number = 7;
 

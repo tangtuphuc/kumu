@@ -21,7 +21,7 @@ export default new Vuex.Store({
                 }
             },
             getters: {
-                isBig: store => item => {
+                isBig: store => (item: number) => {
                     return store.storeVar > item;
                 }
             }
