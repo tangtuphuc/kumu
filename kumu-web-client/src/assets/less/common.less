@@ -1,0 +1,70 @@
+// BORDER RADIUS
+
+@default-radius: 1em;
+
+.border-radius-global(@radius) {
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+}
+
+.box-radius-up(@radius: @default-radius) {
+    .border-radius-global(@radius @radius 0px 0px);
+}
+
+.box-radius-down(@radius: @default-radius) {
+    .border-radius-global(0px 0px @radius @radius);
+}
+
+.box-radius-left(@radius: @default-radius) {
+    .border-radius-global(@radius 0px 0px @radius);
+}
+
+.box-radius-right(@radius: @default-radius) {
+    .border-radius-global(0px @radius @radius 0px);
+}
+
+// BLOCK BACKGROUND
+
+.block-background(@type: absolute, @index: 99, @background: rgba(0, 0, 0, 0.5)) {
+    position: @type;
+    z-index: @index;
+    background: @background;
+    .full-cover();
+}
+
+.block-background-full(@index: 99,@background: rgba(0, 0, 0, 0.5)) {
+    .block-background(fixed, @index, @background);
+}
+
+.block-background-parent(@index: 99, @background: rgba(0, 0, 0, 0.5)) {
+    .block-background(absolute, @index, @background);
+}
+
+.input-box() {
+}
+
+.button() {
+}
+
+.no-margin() {
+    margin: 0;
+}
+
+.no-padding() {
+    padding: 0;
+}
+
+.full-cover() {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.box-shadow(@shadow: 0 3px 3px 0 #cbcbcb) {
+    -webkit-box-shadow: @shadow;
+    box-shadow: @shadow;
+}

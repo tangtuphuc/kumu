@@ -1,25 +1,5 @@
 <template>
-    <div class="test">
-        <ChatMessageBox :listMessage="testListMessage" />
+    <div class="about">
+        <h1>This is an about page</h1>
     </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import ChatMessageBox from '@/components/ChatMessageBox.vue';
-
-export default {
-    data() {
-        return {
-            testListMessage: [
-                { id: 1, text: '3' },
-                { id: 2, text: 'yo' }
-            ]
-        };
-    },
-    name: 'test',
-    components: {
-        ChatMessageBox
-    }
-};
-</script>
