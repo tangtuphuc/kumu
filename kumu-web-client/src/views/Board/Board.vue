@@ -1,6 +1,6 @@
 <template>
     <div class="board">
-        <div v-for="(message, index) in messages" :key="index">
+        <div class="message" v-for="(message, index) in messages" :key="index">
             {{ message.text }}
         </div>
     </div>
