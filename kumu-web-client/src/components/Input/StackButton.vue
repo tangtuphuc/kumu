@@ -33,7 +33,7 @@ export default class StackButton extends Vue {}
 .stack-button {
     width: 2em;
     background-color: #2b7dcb88;
-    margin: 0.5em;
+    margin: 0.25em;
     padding: 0.25em;
     border-radius: 0.5em;
     transition: 0.3s;
