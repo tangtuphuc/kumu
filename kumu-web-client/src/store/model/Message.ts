@@ -17,4 +17,12 @@ export default class Message {
         this.text = text;
         this.type = type;
     }
+
+    isSender() {
+        return this.type === MessageType.SENDER;
+    }
+
+    isReceiver() {
+        return this.type === MessageType.RECEIVER;
+    }
 }

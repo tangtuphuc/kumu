@@ -48,6 +48,7 @@ export default class TypeBox extends Vue {
     @Action(TYPING, { namespace }) typing: any;
 
     sendClicked(): void {
+        if (!this.typingMessage) return;
         this.sendMessage({ text: this.typingMessage });
         this.typingMessage = '';
     }

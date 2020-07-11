@@ -17,7 +17,7 @@ export default {
 @import '../assets/less/common.less';
 
 .footer {
-    background-color: @main-color;
+    background-color: @main-bg;
     display: flex;
     align-items: center;
     justify-content: flex-end;

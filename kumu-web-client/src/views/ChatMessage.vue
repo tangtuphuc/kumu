@@ -4,6 +4,8 @@
             <Header :title="'Kumu'" :description="'Yo'" />
         </div>
 
+        <div class="background"></div>
+
         <div class="board-wrapper">
             <Board :messageList="listMessage" />
         </div>
@@ -45,10 +47,25 @@ export default class ChatMessage extends Vue {
     width: 100%;
     position: fixed;
 
+    .background {
+        background-color: #82e9de77;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        z-index: -1;
+    }
+
     .header-wrapper {
     }
 
     .board-wrapper {
+    }
+
+    .type-box-wrapper {
+        width: 100%;
+        z-index: 1;
+        background-color: #ffffff;
     }
 
     .footer-wrapper {
