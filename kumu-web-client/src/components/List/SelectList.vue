@@ -1,11 +1,16 @@
 <template>
     <div class="list-wrapper">
         <div class="item-row">
-            <div class="item" v-for="(item, index) in itemList" :key="index" @click="itemClick(item)">
+            <div
+                class="item"
+                v-for="(item, index) in itemList"
+                :key="index"
+                @click="itemClick(item)"
+            >
                 <div
                     :class="{
                         'content-item': true,
-                        'selected-item': isSelected(item)
+                        'selected-item': isSelected(item),
                     }"
                 >
                     {{ item[textShowField] }}
@@ -25,22 +30,25 @@ export default {
             default: () => {
                 console.warn('SelectList: Missing `itemList`');
                 return [];
-            }
+            },
         },
         textShowField: {
             type: String,
             required: false,
-            default: 'textShow'
+            default: () => {
+                console.warn('SelectList: Missing `textShow`, default using `textShow`');
+                return 'textShow';
+            },
         },
         selected: {
             type: String,
             required: false,
-            default: ''
-        }
+            default: '',
+        },
     },
     data() {
         return {
-            selectedItem: this.selected
+            selectedItem: this.selected,
         };
     },
     methods: {
@@ -53,8 +61,8 @@ export default {
                 console.warn('SelectList: Missing listener `clickItem`');
             }
             this.$emit('clickItem', item);
-        }
-    }
+        },
+    },
 };
 </script>
 

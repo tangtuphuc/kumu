@@ -1,7 +1,7 @@
 export const MessageType = {
     SENDER: 'sender',
     RECEIVER: 'receiver',
-    BOT: 'bot'
+    BOT: 'bot',
 };
 
 export default class Message {
@@ -13,7 +13,7 @@ export default class Message {
 
     createdAt: number = Date.now();
 
-    constructor(text: string = '', type: string = MessageType.SENDER) {
+    constructor({ text, type }: any) {
         this.text = text;
         this.type = type;
     }

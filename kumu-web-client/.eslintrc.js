@@ -1,13 +1,14 @@
 module.exports = {
     root: true,
     env: {
-        node: true
+        node: true,
     },
     extends: [
         'plugin:vue/essential',
         '@vue/airbnb',
+        'prettier/@typescript-eslint',
         'plugin:prettier/recommended',
-        '@vue/typescript'
+        '@vue/typescript',
     ],
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -15,20 +16,20 @@ module.exports = {
         indent: ['error', 4],
         'import/no-unresolved': ['off'],
         camel_case: ['off'],
-        'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     },
     parserOptions: {
         parser: 'babel-eslint',
         ecmaFeatures: {
-            legacyDecorators: true
-        }
+            legacyDecorators: true,
+        },
     },
     overrides: [
         {
             files: ['**/__tests__/*.{j,t}s?(x)'],
             env: {
-                mocha: true
-            }
-        }
-    ]
+                mocha: true,
+            },
+        },
+    ],
 };

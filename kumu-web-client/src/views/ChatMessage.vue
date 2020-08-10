@@ -23,21 +23,31 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 
+import { Action } from 'vuex-class';
+
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import Board from '@/views/Board/Board.vue';
 import TypeBox from '@/views/TypeBox/TypeBox.vue';
+
+import { FETCH_MESSAGE_HISTORY, SAVE_MESSAGE_HISTORY } from '@/store/actions.type';
+
+const namespace = 'messageBox';
 
 @Component({
     components: {
         TypeBox,
         Board,
         Header,
-        Footer
-    }
+        Footer,
+    },
 })
 export default class ChatMessage extends Vue {
     listMessage: Array<{}> = [];
+
+    @Action(FETCH_MESSAGE_HISTORY, { namespace }) fetchMessageHistory: any;
+
+    @Action(SAVE_MESSAGE_HISTORY, { namespace }) saveMessageHistory: any;
 }
 </script>
 
@@ -54,12 +64,6 @@ export default class ChatMessage extends Vue {
         position: fixed;
         top: 0;
         z-index: -1;
-    }
-
-    .header-wrapper {
-    }
-
-    .board-wrapper {
     }
 
     .type-box-wrapper {

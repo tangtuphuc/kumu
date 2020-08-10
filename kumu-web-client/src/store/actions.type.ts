@@ -4,6 +4,7 @@
 export const SEND_MESSAGE = 'sendMessage';
 export const RECEIVE_NEW_MESSAGE = 'receiveNewMessage';
 
+export const SAVE_MESSAGE_HISTORY = 'saveMessageHistory';
 export const FETCH_MESSAGE_HISTORY = 'fetchMessageHistory';
 
 // Actions global not relate to Server
@@ -36,6 +37,7 @@ export const SOCKET_ON_RECONNECT_FAILED = 'SOCKET_ON_RECONNECT_FAILED';
 export default {
     SEND_MESSAGE,
     RECEIVE_NEW_MESSAGE,
+    SAVE_MESSAGE_HISTORY,
     FETCH_MESSAGE_HISTORY,
 
     LOADING,
@@ -55,5 +57,5 @@ export default {
     SOCKET_ON_TYPING,
     SOCKET_ON_CONNECT_ERROR,
     SOCKET_ON_RECONNECT,
-    SOCKET_ON_RECONNECT_FAILED
+    SOCKET_ON_RECONNECT_FAILED,
 };
