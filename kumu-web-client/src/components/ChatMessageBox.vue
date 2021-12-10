@@ -15,10 +15,10 @@ import { mapState, mapGetters } from 'vuex';
 @Component({
     computed: {
         ...mapState<{ storeVar: string }>('messageBox', {
-            storeVar: (state: { storeVar: string }) => state.storeVar
+            storeVar: (state: { storeVar: string }) => state.storeVar,
         }),
-        ...mapGetters('messageBox', ['isBig'])
-    }
+        ...mapGetters('messageBox', ['isBig']),
+    },
 })
 export default class ChatMessageBox extends Vue {
     @Prop()

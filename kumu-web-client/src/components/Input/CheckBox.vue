@@ -17,19 +17,19 @@ export default {
     props: ['label', 'value', 'name'],
     data() {
         return {
-            idCheckbox: new Date().toTimeString()
+            idCheckbox: new Date().toTimeString(),
         };
     },
     methods: {
         update() {
             this.$emit('input', !this.value);
-        }
+        },
     },
     computed: {
         valueSelf() {
             return this.value;
-        }
-    }
+        },
+    },
 };
 </script>
 

@@ -10,21 +10,21 @@
 export default {
     props: {
         value: {
-            required: false
-        }
+            required: false,
+        },
     },
     methods: {
         inputText(event) {
             this.$emit('input', event.target.value);
-        }
+        },
     },
     computed: {
         listenersNoInput() {
             const listeners = Object.assign({}, this.$listeners);
             delete listeners.input;
             return listeners;
-        }
-    }
+        },
+    },
 };
 </script>
 

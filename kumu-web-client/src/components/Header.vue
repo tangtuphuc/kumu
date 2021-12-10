@@ -26,7 +26,7 @@ export default class Header extends Vue {
         default: () => {
             console.error('Header: Missing `title`. Generated default');
             return '{title}';
-        }
+        },
     })
     title: string | undefined;
 
@@ -35,7 +35,7 @@ export default class Header extends Vue {
         default: () => {
             console.error('Header: Missing `description`. Generated default');
             return '{description}';
-        }
+        },
     })
     description: string | undefined;
 
@@ -44,7 +44,7 @@ export default class Header extends Vue {
         default: () => {
             console.error('Header: Missing `photo`. Generated default');
             return '';
-        }
+        },
     })
     photo: string | undefined;
 }

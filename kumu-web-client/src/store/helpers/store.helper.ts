@@ -60,7 +60,7 @@ export const exposeState: any = (items: any, moduleName: string) => {
         return items.reduce(
             (prev, key) => ({
                 ...prev,
-                [key]: (state: any) => nestedItem(`${moduleName}.${key}`)(state)
+                [key]: (state: any) => nestedItem(`${moduleName}.${key}`)(state),
             }),
             {}
         );

@@ -7,13 +7,13 @@ import { SET_TYPING } from '../mutations.type';
 import { StoreContext } from '../type';
 
 const initialState = {
-    typing: false
+    typing: false,
 };
 
 const mutations = {
     [SET_TYPING](state: any, value: boolean) {
         state.typing = value;
-    }
+    },
 };
 
 const actions = {
@@ -23,21 +23,21 @@ const actions = {
     [SEND_MESSAGE]({ commit, dispatch }: StoreContext, payload?: { text: string }) {
         commit(SET_TYPING, false);
         dispatch(`messageBox/${RECEIVE_NEW_MESSAGE}`, payload, { root: true });
-    }
+    },
 };
 
 const getters = {
-    ...exposeState(initialState)
+    ...exposeState(initialState),
 };
 
 const typingBox = {
     namespaced: true,
     state: {
-        ...initialState
+        ...initialState,
     },
     mutations,
     actions,
-    getters
+    getters,
 };
 
 export default typingBox;

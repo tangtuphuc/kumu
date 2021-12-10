@@ -10,7 +10,7 @@ const routes = [
     {
         path: '/',
         name: 'chatMessage',
-        component: ChatMessage
+        component: ChatMessage,
     },
     {
         path: '/test',
@@ -18,13 +18,13 @@ const routes = [
         // test component file
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/Test.vue')
-    }
+        component: () => import(/* webpackChunkName: "about" */ '../views/Test.vue'),
+    },
 ];
 
 const router = new VueRouter({
     mode: 'history',
-    routes
+    routes,
 });
 
 export default router;

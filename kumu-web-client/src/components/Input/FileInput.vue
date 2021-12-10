@@ -33,17 +33,17 @@ export default {
             required: false,
             default() {
                 return new Date().getTime();
-            }
+            },
         },
         browseIcon: {
             type: String,
             require: false,
-            default: '../../assets/folder_search.png'
-        }
+            default: '../../assets/folder_search.png',
+        },
     },
     data() {
         return {
-            placeholder: ''
+            placeholder: '',
         };
     },
     methods: {
@@ -55,15 +55,15 @@ export default {
             }
             this.$emit('fileSelected', {
                 fileId: this.fileId,
-                file: fileSelected
+                file: fileSelected,
             });
-        }
+        },
     },
     computed: {
         hasFileSelectedListener() {
             return this.$listeners && this.$listeners.fileSelected;
-        }
-    }
+        },
+    },
 };
 </script>
 

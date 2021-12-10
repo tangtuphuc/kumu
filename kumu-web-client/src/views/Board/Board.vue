@@ -19,7 +19,7 @@ import ReceiveMessage from './Message/ReceiveMessage.vue';
 @Component({
     components: {
         SendMessage,
-        ReceiveMessage
+        ReceiveMessage,
     },
     props: {
         messageList: {
@@ -27,12 +27,12 @@ import ReceiveMessage from './Message/ReceiveMessage.vue';
             required: false,
             default() {
                 return [];
-            }
-        }
+            },
+        },
     },
     computed: {
-        ...mapGetters({ messages: 'messageBox/getMessages' })
-    }
+        ...mapGetters({ messages: 'messageBox/getMessages' }),
+    },
 })
 export default class Board extends Vue {}
 </script>

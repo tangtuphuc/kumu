@@ -15,9 +15,9 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
         text: {
             type: String,
             required: false,
-            default: 'This is the receiver text'
-        }
-    }
+            default: 'This is the receiver text',
+        },
+    },
 })
 export default class ReceiveMessage extends Vue {}
 </script>

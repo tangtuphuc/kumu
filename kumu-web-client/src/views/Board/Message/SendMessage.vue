@@ -14,9 +14,9 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
     props: {
         text: {
             type: String,
-            default: 'This is the sender text'
-        }
-    }
+            default: 'This is the sender text',
+        },
+    },
 })
 export default class SendMessage extends Vue {}
 </script>
