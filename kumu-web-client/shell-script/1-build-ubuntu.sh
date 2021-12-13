@@ -16,7 +16,7 @@ sudo service nginx restart
 # Install nvm
 echo " ==== Installing NVM ===="
 cd /var/www/html
-curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.s
+curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh
 bash install_nvm.sh
 
 echo " ==== Installing NodeJS ===="
