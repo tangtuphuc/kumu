@@ -13,10 +13,13 @@ import { loadMessageLocalStorage, saveMessageLocalStorage } from '../service/mes
 
 const initialState: any = {
     messages: [
-        new Message({ text: 'Xin chào chủ nhân', type: MessageType.RECEIVER }),
-        new Message({ text: 'Ta là Kum', type: MessageType.SENDER }),
-        new Message({ text: 'Vâng, xin chào chủ nhân Kum', type: MessageType.RECEIVER }),
-        new Message({ text: 'Đặt báo thức 7h sáng mai cho ta', type: MessageType.SENDER }),
+        new Message({ text: 'Xin chào mọi người', type: MessageType.RECEIVER }),
+        new Message({
+            text: `Đây là source code được build từ ${process.env.NODE_ENV || '?'}`,
+            type: MessageType.SENDER,
+        }),
+        new Message({ text: 'Vâng, xin chào chủ nhân', type: MessageType.RECEIVER }),
+        new Message({ text: 'Đặt báo thức 7h sáng mai', type: MessageType.SENDER }),
     ],
 };
 
