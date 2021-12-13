@@ -1,12 +1,12 @@
 <template>
-    <div class="stack-button" @click="open = !open">
+    <div class="stack-button" @click="clickStackButton()">
         <transition name="fade" mode="out-in">
-            <div v-if="!open">
+            <div v-if="!show">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <div v-if="open">
+            <div v-if="show">
                 <div class="bar skew-left"></div>
                 <div class="bar skew-right"></div>
             </div>
@@ -19,21 +19,21 @@ import { mapGetters } from 'vuex';
 
 import { Component, Vue, Prop } from 'vue-property-decorator';
 
-@Component({
-    data() {
-        return {
-            open: false
-        };
+@Component({})
+export default class StackButton extends Vue {
+    @Prop() show: Boolean = false;
+
+    clickStackButton() {
+        this.$emit('buttonClicked', this.show);
     }
-})
-export default class StackButton extends Vue {}
+}
 </script>
 
 <style lang="less" scoped>
 .stack-button {
     width: 2em;
     background-color: #2b7dcb88;
-    margin: 0.5em;
+    margin: 0.25em;
     padding: 0.25em;
     border-radius: 0.5em;
     transition: 0.3s;

@@ -1,11 +1,10 @@
-// Mutations relate to message
+// Mutations relate to messageBox
 //
-// ./module/message.js`
+// ./module/messageBox.js`
 //
-export const ADD_MESSAGE_HISTORY = 'ADD_MESSAGE_HISTORY';
-export const SET_MESSAGE = 'SET_MESSAGE';
-export const SET_MESSAGE_HISTORY = 'SET_MESSAGE_HISTORY';
-export const SET_MESSAGE_READ = 'SET_MESSAGE_READ';
+export const ADD_MESSAGE = 'ADD_MESSAGE';
+export const UPDATE_MESSAGE = 'UPDATE_MESSAGES';
+export const SET_MESSAGES = 'SET_MESSAGES';
 
 // Mutations relate to Hotel Info
 export const SET_HOTEL_INFO = 'SET_HOTEL_INFO';
@@ -22,7 +21,6 @@ export const REMOVE_NOTIFICATION = 'REMOVE_NOTIFICATION';
 export const SET_LOADING = 'SET_LOADING';
 
 export const SET_TYPING = 'SET_TYPING';
-export const REMOVE_TYPING = 'REMOVE_TYPING';
 
 export const SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE';
 export const REMOVE_ERROR_MESSAGE = 'REMOVE_ERROR_MESSAGE';
