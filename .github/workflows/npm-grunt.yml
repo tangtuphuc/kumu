@@ -25,4 +25,11 @@ jobs:
     - name: Build
       run: |
         npm install
+        npm run serve
+        npm build
+        npm test
+        npm run lint
+        npm run test:e2e
+        npm run test:unit
         grunt
+        
